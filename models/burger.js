@@ -8,9 +8,9 @@ function create (data) {
     return orm.createAll("burgers", data);
 };
 
-function update (data, id) {
-    return orm.updateAll("burgers", data, id);
+function devour (id) {
+    return orm.updateAll("burgers", {devoured: true}, id);
 };
 
 
-module.exports = { all, create, update }
+module.exports = { all, create, devour }

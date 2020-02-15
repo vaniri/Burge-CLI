@@ -18,8 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
-console.log(__dirname);
 
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`server running on ${process.env.PORT || PORT}`)
+console.log(`server running on ${process.env.PORT || PORT}`)
 })

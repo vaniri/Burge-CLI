@@ -1,36 +1,39 @@
-<h1>Eat-Da-Burger!</h1>
+<div id="container">
+  <h1>Eat-Da-Burger!</h1>
+  <div id="menu_container">
+    <div id="in_menu">
+      <h2>Burgers in Menu</h2>
 
-<h2>Burgers in Menu</h2>
+      <ul id="menu_table">
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li class="burger_table">
+          {{burger_name}}
+          <button type="submit" class="devoured" data-id="{{id}}">DEVOURED
+          </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div id="devoured">
+      <h2>Burgers are devoured</h2>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li> {{burger_name}} </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 
-<ul id="menu_table">
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li class="burger_table">
-	{{burger_name}}
-	<button type="submit" class="devoured" data-id="{{id}}">DEVOURED
-	</button>
-</li>
-  {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers are devoured</h2>
-
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{burger_name}}
-  {{/if}}
-  {{/each}}
-</ul>
-
-<div class="form-group">
-  <h2>Add a Burger</h2>
-  <form class="create-form">
-    <input type="text" id="burger_name" name="name" placeholder="Add new burger!"/>
-    <button type="submit" id="add_burger">SUBNMIT!</button>
-    <form>
+  <div class="form_group">
+    <h2>Add a Burger</h2>
+    <form class="create-form">
+      <input type="text" id="burger_name" name="name" placeholder="Add new burger!" /><br>
+      <button type="submit" id="add_burger">SUBNMIT!</button>
+      <form>
+  </div>
+  </form>
 </div>
-</form>
-
-
