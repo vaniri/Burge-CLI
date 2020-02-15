@@ -4,7 +4,7 @@ const burger = require("../models/burger.js");
 
 router.get("/", async (req, res) => {
   let allBurgers = await burger.all();
-  res.render("index", { burgers: allBurgers});
-  });
+  res.render("index", { burgers: allBurgers });
+});
 
-  module.exports = router;
+module.exports = router;

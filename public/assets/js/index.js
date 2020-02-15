@@ -1,4 +1,4 @@
-$(".devoured").on("click", function () {
+$(".devoured_button").on("click", function () {
   let id = $(this).data("id");
   $.post("/api/burgers/devour", { id }, () => {
     location.reload();
